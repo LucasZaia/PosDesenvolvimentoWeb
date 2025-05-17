@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Camiseta Básica",
     "description": "Camiseta de algodão 100% com corte regular.",
-    "price": 49.90,
+    "price": 49.9,
     "category": "Moda",
     "pictureUrl": "https://example.com/images/camiseta-basica.jpg"
   },
@@ -19,7 +19,7 @@
     "id": "3",
     "name": "Chocolate Amargo 70%",
     "description": "Barra de chocolate premium com 70% de cacau.",
-    "price": 12.50,
+    "price": 12.5,
     "category": "Alimentos",
     "pictureUrl": "https://example.com/images/chocolate-amargo.jpg"
   },
@@ -27,7 +27,7 @@
     "id": "4",
     "name": "Vinho Tinto Reserva",
     "description": "Vinho tinto envelhecido em barris de carvalho por 12 meses.",
-    "price": 89.90,
+    "price": 89.9,
     "category": "Bebidas",
     "pictureUrl": "https://example.com/images/vinho-tinto.jpg"
   },
@@ -35,7 +35,7 @@
     "id": "5",
     "name": "Sofá 3 Lugares",
     "description": "Sofá confortável com revestimento em tecido de alta qualidade.",
-    "price": 1299.00,
+    "price": 1299,
     "category": "CasaDecoracao",
     "pictureUrl": "https://example.com/images/sofa-3-lugares.jpg"
   },
@@ -43,7 +43,7 @@
     "id": "6",
     "name": "Creme Hidratante Facial",
     "description": "Creme hidratante com ácido hialurônico para todos os tipos de pele.",
-    "price": 59.90,
+    "price": 59.9,
     "category": "SaudeBeleza",
     "pictureUrl": "https://example.com/images/creme-hidratante.jpg"
   },
@@ -51,7 +51,7 @@
     "id": "7",
     "name": "Bicicleta Mountain Bike",
     "description": "Bicicleta com suspensão dupla e 21 marchas.",
-    "price": 2499.00,
+    "price": 2499,
     "category": "EsporteLazer",
     "pictureUrl": "https://example.com/images/mountain-bike.jpg"
   },
@@ -59,7 +59,7 @@
     "id": "8",
     "name": "Livro: A Arte da Guerra",
     "description": "Clássico da literatura sobre estratégia e liderança.",
-    "price": 29.90,
+    "price": 29.9,
     "category": "Livros",
     "pictureUrl": "https://example.com/images/a-arte-da-guerra.jpg"
   },
@@ -67,7 +67,7 @@
     "id": "9",
     "name": "Caderno Universitário",
     "description": "Caderno com 200 folhas pautadas e capa dura.",
-    "price": 19.90,
+    "price": 19.9,
     "category": "Papelaria",
     "pictureUrl": "https://example.com/images/caderno-universitario.jpg"
   },
@@ -75,7 +75,7 @@
     "id": "10",
     "name": "Boneca de Pano",
     "description": "Boneca artesanal feita com materiais hipoalergênicos.",
-    "price": 39.90,
+    "price": 39.9,
     "category": "Brinquedos",
     "pictureUrl": "https://example.com/images/boneca-de-pano.jpg"
   },
@@ -83,7 +83,7 @@
     "id": "11",
     "name": "Relógio de Pulso Clássico",
     "description": "Relógio analógico com pulseira de couro genuíno.",
-    "price": 249.90,
+    "price": 249.9,
     "category": "Acessorios",
     "pictureUrl": "https://example.com/images/relogio-classico.jpg"
   },
@@ -91,7 +91,7 @@
     "id": "12",
     "name": "Fone de Ouvido Bluetooth",
     "description": "Fone de ouvido sem fio com cancelamento de ruído ativo.",
-    "price": 399.90,
+    "price": 399.9,
     "category": "Eletronicos",
     "pictureUrl": "https://example.com/images/fone-bluetooth.jpg"
   },
@@ -99,7 +99,7 @@
     "id": "13",
     "name": "Mesa de Escritório",
     "description": "Mesa compacta com acabamento em madeira e estrutura metálica.",
-    "price": 599.00,
+    "price": 599,
     "category": "CasaDecoracao",
     "pictureUrl": "https://example.com/images/mesa-escritorio.jpg"
   },
@@ -107,7 +107,7 @@
     "id": "14",
     "name": "Tênis Esportivo",
     "description": "Tênis leve e confortável, ideal para corridas e caminhadas.",
-    "price": 299.90,
+    "price": 299.9,
     "category": "EsporteLazer",
     "pictureUrl": "https://example.com/images/tenis-esportivo.jpg"
   },
@@ -115,7 +115,7 @@
     "id": "15",
     "name": "Cafeteira Elétrica",
     "description": "Cafeteira com capacidade para 1,5L e função de manter aquecido.",
-    "price": 199.90,
+    "price": 199.9,
     "category": "Eletrodomesticos",
     "pictureUrl": "https://example.com/images/cafeteira-eletrica.jpg"
   },
@@ -123,7 +123,7 @@
     "id": "16",
     "name": "Jaqueta de Couro",
     "description": "Jaqueta estilosa feita com couro sintético de alta qualidade.",
-    "price": 499.90,
+    "price": 499.9,
     "category": "Moda",
     "pictureUrl": "https://example.com/images/jaqueta-couro.jpg"
   },
@@ -131,7 +131,7 @@
     "id": "17",
     "name": "Kit de Ferramentas",
     "description": "Conjunto com 50 peças para reparos domésticos.",
-    "price": 149.90,
+    "price": 149.9,
     "category": "CasaDecoracao",
     "pictureUrl": "https://example.com/images/kit-ferramentas.jpg"
   },
@@ -139,7 +139,7 @@
     "id": "18",
     "name": "Jogo de Panelas Antiaderentes",
     "description": "Conjunto com 5 panelas antiaderentes de alta durabilidade.",
-    "price": 349.90,
+    "price": 349.9,
     "category": "CasaDecoracao",
     "pictureUrl": "https://example.com/images/jogo-panelas.jpg"
   },
@@ -147,16 +147,24 @@
     "id": "19",
     "name": "Câmera Fotográfica Digital",
     "description": "Câmera compacta com resolução de 20MP e zoom óptico de 10x.",
-    "price": 1299.90,
+    "price": 1299.9,
     "category": "Eletronicos",
     "pictureUrl": "https://example.com/images/camera-digital.jpg"
   },
   {
     "id": "20",
-    "name": "Mochila Escolar",
-    "description": "Mochila resistente com compartimento para notebook.",
-    "price": 99.90,
-    "category": "Papelaria",
+    "name": "Vaso Decorativo de Cerâmica Branco",
+    "description": "Vaso de cerâmica com acabamento fosco, design moderno e elegante, perfeito para enfeitar sua sala ou escritório dwsed wedrwerfd",
+    "price": 150,
+    "category": "CasaDecoracao",
     "pictureUrl": "https://example.com/images/mochila-escolar.jpg"
+  },
+  {
+    "id": "21",
+    "name": "Vaso Decorativo de Cerâmica Branco",
+    "description": "Vaso de cerâmica com acabamento fosco, design moderno e elegante, perfeito para enfeitar sua sala ou escritório",
+    "price": 89.9,
+    "category": "CasaDecoracao",
+    "pictureUrl": "http://127.0.0.1:8081/products/image/21.jpeg"
   }
 ]
