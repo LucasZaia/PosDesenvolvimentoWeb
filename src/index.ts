@@ -8,6 +8,16 @@ import { pipeline } from 'stream/promises';
 import fastifyStatic from '@fastify/static';
 import { AddressInfo } from 'net';
 import productsRepository from './repository/products';
+import UserRepository from './repository/user';
+import Authentication from './auth/authentication';
+
+// Declare os tipos dos decorators
+declare module 'fastify' {
+  interface FastifyInstance {
+    authMiddleware: (request: FastifyRequest, reply: FastifyReply) => Promise<void>;
+    requireRole: (allowedRoles: string | string[]) => (request: FastifyRequest, reply: FastifyReply) => Promise<FastifyRequest | void>;
+  }
+}
 
 const server: FastifyInstance = fastify({
   logger: {
@@ -55,9 +65,46 @@ server.addHook('onError', async (request: FastifyRequest, reply: FastifyReply, e
   }, 'Error');
 });
 
-async function routes(fastify: FastifyInstance, options: any) {
 
-  fastify.get('/products', async (request: FastifyRequest, reply: FastifyReply) => {
+export async function routes(fastify: FastifyInstance, options: any) {
+
+  fastify.decorate('authMiddleware', 
+    async (request: FastifyRequest, reply: FastifyReply) => {
+      const token = request.headers.authorization;
+
+      if (!token) {
+        return reply.status(401).send({ message: 'Token not found' });
+      }
+
+      try {
+        const decoded = Authentication.verifyToken(token);
+        (request as any).user = decoded;
+      } catch (err) {
+        return reply.status(401).send({ message: (err as Error).message });
+      }
+    }
+  );
+
+  fastify.decorate('requireRole', (allowedRoles: string | string[]) => {
+    const allowedRolesList = Array.isArray(allowedRoles) ? allowedRoles : [allowedRoles];
+
+    return async (request: FastifyRequest, reply: FastifyReply) => {
+      const userRoles = (request as any).user?.roles || (request as any).user?.role || [];
+      const roles = Array.isArray(userRoles) ? userRoles : [userRoles];
+
+      const ok = roles.some(role => allowedRolesList.includes(role));
+
+      if (!ok) {
+        return reply.status(403).send({ message: 'insufficient permissions' });
+      }
+
+      return request;
+    }
+  });
+
+  fastify.get('/products', { 
+    preHandler: [fastify.authMiddleware, fastify.requireRole('admin')]
+  }, async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       const products = await productsRepository.findAll();
 
@@ -194,6 +241,25 @@ async function routes(fastify: FastifyInstance, options: any) {
       });
       }
     });
+
+  fastify.post('/login', async (request: FastifyRequest, reply: FastifyReply) => {
+    const { email, password } = request.body as { email: string, password: string };
+    try {
+      const user = await UserRepository.findByEmailAndPassword(email, password);
+      const tokens = new Authentication(user).mountToken();
+      reply.status(200).send({
+        success: true,
+        data: tokens,
+        message: 'Login successful'
+      });
+    } catch (error) {
+      reply.status(400).send({
+        success: false,
+        data: null,
+        message: error
+      });
+    }
+  })
 }
 
 
