@@ -10,6 +10,7 @@ import { AddressInfo } from 'net';
 import productsRepository from './repository/products';
 import UserRepository from './repository/user';
 import Authentication from './auth/authentication';
+import cors from '@fastify/cors';
 
 // Declare os tipos dos decorators
 declare module 'fastify' {
@@ -19,10 +20,18 @@ declare module 'fastify' {
   }
 }
 
+
+
 const server: FastifyInstance = fastify({
   logger: {
     level: 'debug',
   }
+});
+
+server.register(cors, {
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
 });
 
 server.register(multipart, {
@@ -102,9 +111,8 @@ export async function routes(fastify: FastifyInstance, options: any) {
     }
   });
 
-  fastify.get('/products', { 
-    preHandler: [fastify.authMiddleware, fastify.requireRole('admin')]
-  }, async (request: FastifyRequest, reply: FastifyReply) => {
+  fastify.get('/products', //{preHandler: [fastify.authMiddleware, fastify.requireRole('admin')]},
+   async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       const products = await productsRepository.findAll();
 
@@ -240,7 +248,7 @@ export async function routes(fastify: FastifyInstance, options: any) {
         message: 'Error uploading image'
       });
       }
-    });
+  });
 
   fastify.post('/login', async (request: FastifyRequest, reply: FastifyReply) => {
     const { email, password } = request.body as { email: string, password: string };
